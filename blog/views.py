@@ -1,12 +1,14 @@
 
-from django.shortcuts import render
-from django.views.generic import ListView
+
+from django.views.generic import ListView, DetailView
 from .models import Post
 
 class PostList(ListView):
     model = Post
     ordering = '-pk'
 
+class PostDetail(DetailView):
+    model = Post
 
 
 # Create your views here.
@@ -27,7 +29,7 @@ def single_post_page(request, pk):
 
     return render(
         request,
-        'blog/single_post_page.html',
+        'blog/post_detail.html',
         {
             'post': post
         }
