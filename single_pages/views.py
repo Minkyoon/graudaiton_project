@@ -13,3 +13,9 @@ def about_me(request):
         request,
         'single_pages/about_me.html'
     )
+
+def sign_in(request):
+    return render(
+        request,
+        'accounts/home/signup'
+    )
